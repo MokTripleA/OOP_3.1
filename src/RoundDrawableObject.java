@@ -14,7 +14,7 @@ public abstract class RoundDrawableObject extends PApplet {
     RoundDrawableObject(PApplet iWindow, float inputPositionX, float inputPositionY, float iDiameter, float iSpeed, float iSpeed_2, int iColor) {
         window = iWindow;
         xPos = inputPositionX;
-        yPos = inputPositionX;
+        yPos = inputPositionY;
         diameter = iDiameter;
         speed = iSpeed;
         speed_2 = iSpeed_2;

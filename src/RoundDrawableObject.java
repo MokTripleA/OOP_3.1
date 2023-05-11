@@ -2,23 +2,23 @@ import processing.core.PApplet;
 
 public abstract class RoundDrawableObject extends PApplet {
 
-    private PApplet window;
-    private float xPos;
-    private float yPos;
-    private float diameter;
-    private float speed;
-    private float speed_2;
-    private int color;
-    private float accel;
+    protected PApplet window;
+    protected float xPos;
+    protected float yPos;
+    protected float diameter;
+    protected float speed;
+    protected float speed_2;
+    protected int color;
+    protected float accel;
 
     RoundDrawableObject(PApplet iWindow, float inputPositionX, float inputPositionY, float iDiameter, float iSpeed, float iSpeed_2, int iColor) {
-        iWindow = window;
-        inputPositionX = xPos;
-        inputPositionY = yPos;
-        iDiameter = diameter;
-        iSpeed = speed;
-        iSpeed_2 = speed_2;
-        iColor = color;
+        window = iWindow;
+        xPos = inputPositionX;
+        yPos = inputPositionX;
+        diameter = iDiameter;
+        speed = iSpeed;
+        speed_2 = iSpeed_2;
+        color = iColor;
     }
 
     abstract void collision();

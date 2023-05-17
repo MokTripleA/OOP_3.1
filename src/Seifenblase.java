@@ -9,12 +9,15 @@ public class Seifenblase extends RoundDrawableObject {
     }
 
     @Override
-    void collision() {
+    void collision(RoundDrawableObject other) {
         if (xPos - diameter / 2 < 0 ||
                 xPos + diameter / 2 > window.width ||
                 yPos - diameter / 2 < 0 ||
                 yPos + diameter / 2 > window.height
         ) {
+            platzen = true;
+        }
+        if (other instanceof Dornenball && Math.sqrt(Math.pow(other.xPos - xPos, 2) + Math.pow(other.yPos - yPos, 2)) < (diameter + ((Dornenball) other).innerDiameter) / 2) {
             platzen = true;
         }
     }
@@ -25,7 +28,7 @@ public class Seifenblase extends RoundDrawableObject {
         if (Math.sqrt(Math.pow(X - xPos, 2) + Math.pow(Y - yPos, 2)) < diameter / 2) {
             diameter += 5;
         }
-        if (Math.sqrt(Math.pow(X - xPos, 2) + Math.pow(Y - yPos, 2)) < 500) {
+        if (Math.sqrt(Math.pow(X - xPos, 2) + Math.pow(Y - yPos, 2)) < 500 && Math.sqrt(Math.pow(X - xPos, 2) + Math.pow(Y - yPos, 2)) > diameter / 2) {
             if (X < xPos) {
                 speed += 2;
             }

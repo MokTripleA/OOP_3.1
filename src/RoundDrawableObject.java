@@ -21,7 +21,7 @@ public abstract class RoundDrawableObject extends PApplet {
         color = iColor;
     }
 
-    abstract void collision();
+    abstract void collision(RoundDrawableObject other);
 
     abstract int move(float t);
 
